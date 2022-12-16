@@ -1,0 +1,422 @@
+.index-body {
+  background-color: #ecf8e5;
+  font-family: Arial;
+}
+/*-----עיצוב הלוגו-------*/
+header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-left: 100px;
+  padding-top: 60px;
+  font-size: 20px;
+  color: #347571;
+}
+/*********** עיצוב עמוד הבית***********/
+.head {
+  grid-column: span 1;
+  margin-top: 70px;
+  margin-right: -74px;
+  text-align: center;
+}
+
+.image {
+  align-items: end;
+  grid-column: span 1;
+  margin-top: 21px;
+}
+
+.container {
+  display: grid;
+  row-gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.text {
+  grid-column: span 2;
+  font-size: 50px;
+  color: #347571;
+}
+.button1 {
+  background-color: #5ec57e;
+  font-weight: bold;
+  border-radius: 20px;
+  border: none;
+  color: white;
+  padding: 10px 40px;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 1;
+  transition: 0.3s;
+}
+.button1:hover {
+  opacity: 0.6;
+  color: black;
+}
+.button2:hover {
+  opacity: 0.6;
+  color: black;
+}
+
+.button2 {
+  background-color: #b8e28a;
+  font-weight: bold;
+  border-radius: 20px;
+  border: none;
+  color: white;
+  padding: 10px 30px;
+  text-align: center;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  opacity: 1;
+  transition: 0.3s;
+}
+.b1 {
+  margin-top: 57px;
+}
+.b2 {
+  margin-top: 20px;
+}
+
+/******* עיצוב עמוד הזנת פרטים*****/
+.Details-body {
+  background-color: #fffcf3;
+  font-family: Arial;
+  margin: 0;
+}
+
+.title {
+  grid-column: span 1;
+  font-size: 25px;
+  font-weight: bold;
+  display: flex;
+  padding-bottom: 30px;
+  align-items: center;
+  text-align: right;
+  justify-content: center;
+}
+
+.TotCont {
+  height: calc(100vh - 110px);
+  grid-template-columns: 1fr 2fr 2fr;
+  justify-content: center;
+  align-items: baseline;
+  display: grid;
+  gap: 30px;
+  padding-top: 10vh;
+}
+
+.FormCont {
+  align-self: flex-start;
+}
+
+.form-inputs {
+  display: flex;
+  flex-flow: column;
+  gap: 22px;
+}
+
+.form-field {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+label {
+  font-size: 25px;
+}
+
+.input-field {
+  background-color: #dcf4ce;
+  border-radius: 20px;
+  border: none;
+  padding: 10px 30px;
+  max-width: 200px;
+  border: 1px solid #dcf4ce;
+}
+
+.SubmitCont {
+  align-self: flex-start;
+  padding-top: 20vh;
+}
+
+.SubDiv {
+  display: flex;
+  justify-content: center;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+}
+.continueBtn {
+  background-color: #5ec57e;
+  font-weight: bold;
+  border-radius: 20px;
+  border: none;
+  color: white;
+  padding: 10px 40px;
+  text-align: center;
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.continueBtn:hover {
+  opacity: 0.6;
+  color: black;
+  background-color: #347571;
+}
+
+.second-PageImg {
+  display: grid;
+  justify-content: center;
+}
+.animation {
+  border-radius: 50%;
+}
+.tech-helpImg:hover {
+  cursor: help;
+}
+
+.help-phone {
+    display: none;
+    position: absolute;
+    bottom: -60px;
+    text-align: center;
+    width: 200px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-style: italic;
+}
+
+.tech-helpImg:hover .help-phone {
+  display: block;
+}
+
+.tech-helpImg {
+  margin: 60px;
+  display: flex;  
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgb(0 0 0);
+  transform: scale(1);
+  animation: pulse 2s infinite;
+  padding: 10px;
+  gap: 10px;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: #b8e28a;
+}
+
+.tech-helpImg:hover.overlay {
+  opacity: 1;
+}
+
+/*-------עיצוב עמוד תוצאות------*/
+
+.Results {
+  height: calc(100vh - 110px);
+  grid-template-columns: 1fr 2fr 1fr;
+  justify-content: center;
+  align-items: baseline;
+  display: grid;
+  gap: 30px;
+  padding-top: 4vh;
+}
+.Results-Form {
+  align-self: flex-start;
+}
+
+.ResOutputs {
+  display: flex;
+  flex-flow: column;
+  gap: 70px;
+}
+
+.Results-PageImgs {
+  display: grid;
+  justify-content: center;
+}
+
+.form-field2 {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Btn-cont {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  gap: 10px;
+}
+
+.Btn-cont .btn-cont-button {
+  
+display: block;
+  
+margin: 0;
+  
+position: relative;
+}
+
+/*--------עיצוב עמוד אודות------*/
+
+section {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section .About {
+  position: relative;
+  z-index: 1;
+  max-width: 1000px;
+  text-align: center;
+  padding: 0px 100px;
+}
+
+.about-h2 {
+  color: #5ec57e;
+  font-size: 30px;
+}
+
+.p1 {
+  color: #347571;
+  font-size: 20px;
+}
+
+.Support {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 18px;
+  align-content: center;
+  row-gap: 5px;
+}
+
+.support-h3 {
+  color: #3e3a4e;
+  border-bottom: 1px solid #000000;
+  padding-bottom: 3px;
+}
+
+a.link {
+  color: #5ec57e;
+  text-decoration: none;
+}
+
+/*-----עיצוב טופס משוב-----*/
+
+.Form2 {
+  display: grid;
+  row-gap: 20px;
+  grid-template-columns: 2fr 1fr;
+}
+
+.sixth-PageImg {
+  display: flex;
+  justify-items: end;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+.Form2Cont {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(#5ec57e, #ecf8e5, #e1dccd);
+  border-radius: 50px;
+  padding-right: 50px;
+}
+
+/*-----עיצוב המפה-----*/
+#map {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.go-back-btn {
+  size: 20px;
+  margin: 20px 60px;
+  padding: 5px 15px;
+  border-radius: 20px;
+  border: none;
+  background-color: #5ec57e;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  opacity: 1;
+  transition: 0.3s;
+  position: absolute;
+  z-index: 1;
+}
+
+.go-back-btn:hover {
+  opacity: 0.8;
+  color: black;
+}
+
+.map-btn {
+  margin-right: 100px;
+  margin-top: 115px;
+  font-size: 13px;
+}
+
+.map-body {
+  margin: 0;
+}
+
+.input-error {
+  border: 1px solid red;
+}
+
+.input-valid {
+  border: 1px solid #03ff03;
+}
+
+.no-underline {
+  text-decoration: none;
+}

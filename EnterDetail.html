@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Details</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  
+  <body class="Details-body">
+    <header>
+      <div>TaxBack</div>
+      <img src="images/white-logo.png" alt="logo" height="50" width="55" />
+    </header>
+
+    <div class="TotCont">
+      <div class="second-PageImg">
+        <div class="Tree">
+          <img src="images/Dollar-Tree.png" alt="dollar-tree" />
+        </div>
+        <div class="tech-helpImg">
+          <img
+            class="animation"
+            src="images/tech-help.png"
+            alt="tech-help"
+            height="60"
+          />
+          <p class="help-phone">052-538-1648</p>
+        </div>
+      </div>
+
+      <div class="FormCont">
+        <form>
+          <div class="title">הזנת פרטים אישיים</div>
+          <!-- Heading of the form -->
+          <div class="form-inputs">
+            <div class="form-field">
+              <label for="Gender">מין</label>
+              <select class="input-field" id="Gender" name="Gender">
+                <option value="male">זכר</option>
+                <option value="female">נקבה</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="status">מצב אישי</label>
+              <select class="input-field" id="status" name="status">
+                <option value="single">רווק/ה</option>
+                <option value="married">נשוי/נשואה</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="NumOfKids">מספר ילדים</label>
+              <input onkeypress='validate(event)'
+                class="input-field"
+                type="number"
+                id="NumOfKids"
+                min="0"
+                max="12"
+              />
+            </div>
+
+            <div class="form-field">
+              <label for="Income">גובה הכנסה</label>
+              <input onkeypress='validate(event)'
+                class="input-field"
+                id="Income"
+                type="text"
+                placeholder="הזן משכורת ברוטו"
+                required
+              />
+            </div>
+
+            <div class="SubDiv">
+              <input
+                class="continueBtn"
+                type="button"
+                value="חשב"
+                onclick="calculate()"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="SubmitCont">
+        <div class="form-field">
+          <label for="Total">סכום נקודות זיכוי</label>
+          <input class="input-field" id="Total" type="text" disabled />
+        </div>
+        <a href="map.html">
+          <button class="button1 map-btn">לבחירת ישוב</button>
+        </a>
+      </div>
+    </div>
+
+    <script defer src="src/calculate.js"></script>
+  </body>
+</html>

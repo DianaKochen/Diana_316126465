@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>WriteToUS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<header>
+    <div>TaxBack</div>
+    <img src="images/white-logo.png" alt="logo" height="50" width="55">
+</header>
+
+<body class="Details-body">
+<div class="Form2">
+    <div class="Form2Cont">
+        <form id="ContactForm">
+                <div class="title">עזרו לנו להשתפר!</div><!-- Heading of the form -->
+                <div class="form-inputs">
+                    <div class="form-field">
+                        <label for="Name">שם מלא</label>
+                        <input class="input-field" id="Name"  type="text" placeholder="הזן שם מלא" required>
+                    </div>
+                    <br><br>
+                    <div class="form-field">
+                        <label for="PhoneNumber">מספר טלפון</label>
+                        <input class="input-field" id="PhoneNumber"  type="number" placeholder="הזן מספר טלפון" required>
+                    </div>
+                    <br><br>
+                    <div class="form-field">
+                        <label for="EmailAdress">אימייל</label>
+                        <input class="input-field" id="EmailAdress" type="email" placeholder="הזן כתובת מייל" required>
+                    </div>
+                    <br><br>
+                    <div class="form-field">
+                        <label for="Review">ספר/י לנו כיצד נוכל לשפר את האתר:</label>
+                        <textarea class="input-field" id="Review" rows="5" placeholder="כתוב כאן את המשוב..."></textarea>
+                    </div>
+                    <br><br>
+                    <div class="SubDiv">
+                         <input class="continueBtn" type="button" onclick="sendReview()" value="שלח">
+                    </div>
+                </div>
+        </form>
+    </div>
+
+    <div class="sixth-PageImg">
+     <img src="images/target.png" alt="target" height="50%">
+        <div class="tech-helpImg">
+            <img class="animation" src="images/tech-help.png" alt="tech-help" height="60" >
+            <p class="help-phone">052-538-1648</p>
+        </div>
+    </div>
+</div>
+
+<script src="src/calculate.js"></script>
+
+</body>
+</html>
