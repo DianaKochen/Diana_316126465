@@ -1,7 +1,7 @@
 import { citiesTaxInfo } from './Cities.js'
 
 function goBack() {
-  window.location = './index.html';
+  window.location = 'map.html';
 }
 
 async function loadMap() {
@@ -30,7 +30,7 @@ async function loadMap() {
 }
 
 function onMarkerClick(city) {
-    window.location.href = `${window.location.origin}/Results.html?city=${city.name}`
+    window.location.href = `${window.location.origin}/static/views/Results.html?city=${city.name}`
 }
 
 function loadResults() {
@@ -64,11 +64,11 @@ function loadResults() {
 }
 
 function getPrecentageIcon(city) {
-  const A = "/images/green_MarkerA.png";
-  const B = "/images/blue_MarkerB.png";
-  const C = "/images/yellow_MarkerC.png";
-  const D = "/images/orange_MarkerD.png";
-  const E = "/images/red_MarkerE.png";
+  const A = "../images/green_MarkerA.png";
+  const B = "../images/blue_MarkerB.png";
+  const C = "../images/yellow_MarkerC.png";
+  const D = "../images/orange_MarkerD.png";
+  const E = "../images/red_MarkerE.png";
 
   if (city.percent <= 7) {
     return E;
