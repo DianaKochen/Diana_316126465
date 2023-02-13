@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+    <head>
+        <meta charset="UTF-8" />
+        <title>TaxMap</title>
+        <link rel="stylesheet" href="CSS/style.css" />
+        <script type="module" src="JS/main.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/googlemaps-js-api-loader/1.15.1/index.min.js"
+            integrity="sha512-0JztDLW4t/jkz73TcDrwF+bUNT9YACIr7ozzcAncWyYip9Svv6p8aimlZH2XL5StEvwQW31ko9KQEa+fNrSuSg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+    </head>
+
+    <body dir="rtl" onload="loadMap()" class="map-body">
+        <button class="go-back-btn" onclick="goBack()">חזור לדף הראשי</button>
+        <div id="map"></div>
+    </body>
+</html>

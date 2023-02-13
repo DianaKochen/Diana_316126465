@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Reviews</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="CSS/style.css" />
+    </head>
+    <body class="index-body">
+        <table id="reviews-tbl" class="table table-hover mt-3">
+            <thead>
+                <tr>
+                    <th scope="col" id="id">
+                        <span>#</span>
+                        <i class="fa fa-sort" aria-hidden="true"></i>
+                    </th>
+                    <th scope="col" id="name">
+                        <span>Name</span>
+                         <i class="fa fa-sort" aria-hidden="true"></i>
+                    </th>
+                    <th scope="col" id="phone_number">
+                        <span>Phone</span>
+                        <i class="fa fa-sort" aria-hidden="true"></i>
+                    </th>
+                    <th scope="col" id="email">
+                        <span>Email</span>
+                        <i class="fa fa-sort" aria-hidden="true"></i>
+                    </th>
+                    <th scope="col" id="review">
+                        <span>Review</span>
+                        <i class="fa fa-sort" aria-hidden="true"></i>
+                    </th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider"></tbody>
+        </table>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+            crossorigin="anonymous"
+        ></script>
+        <script src="JS/nav.js"></script>
+
+        <script>
+            const table = document.querySelector("#reviews-tbl tbody");
+            fetch(`/api/reviews`, {
+                method: "GET",
+            })
+                .then((response) => response.json())
+                .then((response) => {
+                    if (response?.data) {
+                        for (let i = 0; i < response.data.length; i++) {
+                            const review = response.data[i];
+                            table.innerHTML += `
+                        <tr>
+                            <th scope="row">${review.id}</th>
+                            <td>${review.name}</td>
+                            <td>${review.phone_number}</td>
+                            <td>${review.email}</td>
+                            <td>${review.review}</td>
+                        </tr>
+                    `;
+                        }
+                    }
+                });
+
+            let sortOrder = 'DESC';
+            document.querySelectorAll('#reviews-tbl th[scope="col"]').forEach(function(elem){
+                elem.addEventListener('click', function(){
+                    const sortBy = elem.id;
+                    sortOrder = sortOrder === 'ASC' ? 'DESC' : 'ASC';
+                    fetch(`/api/reviews?sortBy=${sortBy}&sortOrder=${sortOrder}`, {
+                        method: "GET",
+                    })
+                        .then((response) => response.json())
+                        .then((response) => {
+                            if (response?.data) {
+                                table.innerHTML = ``;
+                                for (let i = 0; i < response.data.length; i++) {
+                                    const review = response.data[i];
+                                    table.innerHTML += `
+                                <tr>
+                                    <th scope="row">${review.id}</th>
+                                    <td>${review.name}</td>
+                                    <td>${review.phone_number}</td>
+                                    <td>${review.email}</td>
+                                    <td>${review.review}</td>
+                                </tr>
+                            `;
+                                }
+                            }
+                        });
+                });
+            });
+        </script>
+    </body>
+</html>
